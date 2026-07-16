@@ -1,0 +1,11 @@
+import numpy as np
+
+# 3x3 matrix with your new product sales inputs
+sales_data = np.array([[120, 150, 130],
+                       [200, 210, 190],
+                       [ 90, 100,  95]])
+
+# Calculate the overall average
+average_price = np.mean(sales_data)
+
+print(f"Overall Average Price: {average_price:.2f}")
