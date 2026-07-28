@@ -1,0 +1,27 @@
+import numpy as np
+
+# Load the dataset
+house_data = np.array([
+    [3, 150000],
+    [5, 250000],
+    [6, 300000],
+    [4, 200000],
+    [7, 350000]
+])
+
+# Column indices
+BEDROOMS_COL_IDX = 0
+SALE_PRICE_COL_IDX = 1
+
+# Select houses with more than 4 bedrooms
+prices_over_four_beds = house_data[
+    house_data[:, BEDROOMS_COL_IDX] > 4,
+    SALE_PRICE_COL_IDX
+]
+
+# Calculate average sale price
+if prices_over_four_beds.size > 0:
+    average_price = np.mean(prices_over_four_beds)
+    print(f"The average sale price is: ₹{average_price:,.2f}")
+else:
+    print("No houses found with more than 4 bedrooms.")
